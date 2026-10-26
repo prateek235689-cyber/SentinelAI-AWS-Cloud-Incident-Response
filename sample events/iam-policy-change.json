@@ -1,0 +1,29 @@
+{
+  "version": "0",
+  "id": "sentinelai-test-001",
+  "detail-type": "AWS API Call via CloudTrail",
+  "source": "aws.iam",
+  "account": "111122223333",
+  "time": "2026-10-26T09:30:00Z",
+  "region": "ap-south-1",
+  "detail": {
+    "eventSource": "iam.amazonaws.com",
+    "eventName": "PutRolePolicy",
+    "awsRegion": "ap-south-1",
+    "userIdentity": {
+      "type": "IAMUser",
+      "userName": "sample-test-user"
+    },
+    "requestParameters": {
+      "roleName": "SampleApplicationRole",
+      "policyName": "SampleInlinePolicy"
+    },
+    "responseElements": null,
+    "errorCode": null
+  },
+  "sentinelai": {
+    "isSynthetic": true,
+    "scenario": "IAM role policy modification",
+    "expectedSeverity": "HIGH"
+  }
+}
