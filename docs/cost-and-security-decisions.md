@@ -57,3 +57,23 @@ Status: Accepted
 - [ ] Confirm logging and retention choices.
 - [ ] Test with synthetic events first.
 - [ ] Verify cleanup procedures for temporary resources.
+
+
+## Milestone 3 — Environment Readiness:
+### Region
+Target region: ap-south-1 (Mumbai)
+### Account Access
+Status: Pending verification
+The project will use an appropriately scoped non-root identity. Root credentials will not be used for routine project development.
+### Billing and Budget Controls
+Status: Pending verification
+Current charges, applicable Free Tier offers, available budget controls, and service pricing must be reviewed before deployment.
+### Existing Resources
+Status: Pending inventory
+Existing AWS resources will be distinguished from SentinelAI resources. No unrelated resources will be modified or deleted.
+### Deployment Authorization
+Status: Not yet approved
+No SentinelAI production event pipeline will be deployed until access, permissions, pricing, and resource requirements have been reviewed.
+### Next Decision
+Determine whether the account is ready for a minimal, controlled event-processing implementation.
+
