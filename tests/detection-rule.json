@@ -1,0 +1,40 @@
+{
+  "rules": [
+    {
+      "ruleId": "SENTINEL-IAM-001",
+      "name": "IAM Role Policy Modified",
+      "description": "Detects API calls that add or modify an IAM role policy.",
+      "eventSource": "iam.amazonaws.com",
+      "eventNames": [
+        "PutRolePolicy",
+        "AttachRolePolicy"
+      ],
+      "baseSeverity": "HIGH",
+      "requiresInvestigation": true
+    },
+    {
+      "ruleId": "SENTINEL-IAM-002",
+      "name": "IAM User Policy Modified",
+      "description": "Detects API calls that add or attach a policy to an IAM user.",
+      "eventSource": "iam.amazonaws.com",
+      "eventNames": [
+        "PutUserPolicy",
+        "AttachUserPolicy"
+      ],
+      "baseSeverity": "HIGH",
+      "requiresInvestigation": true
+    },
+    {
+      "ruleId": "SENTINEL-IAM-003",
+      "name": "IAM Managed Policy Version Changed",
+      "description": "Detects creation or selection of a managed policy version.",
+      "eventSource": "iam.amazonaws.com",
+      "eventNames": [
+        "CreatePolicyVersion",
+        "SetDefaultPolicyVersion"
+      ],
+      "baseSeverity": "HIGH",
+      "requiresInvestigation": true
+    }
+  ]
+}
