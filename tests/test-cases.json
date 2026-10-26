@@ -1,0 +1,35 @@
+{
+  "testCases": [
+    {
+      "id": "TC-001",
+      "description": "Detect IAM role policy modification",
+      "eventFile": "sample-events/iam-policy-change.json",
+      "expectedMatched": true,
+      "expectedRiskScore": 40,
+      "expectedSeverity": "MEDIUM"
+    },
+    {
+      "id": "TC-002",
+      "description": "Ignore unrelated API event",
+      "event": {
+        "detail": {
+          "eventSource": "ec2.amazonaws.com",
+          "eventName": "DescribeInstances",
+          "awsRegion": "ap-south-1"
+        }
+      },
+      "expectedMatched": false
+    },
+    {
+      "id": "TC-003",
+      "description": "Reject event missing required fields",
+      "event": {
+        "detail": {
+          "eventSource": "iam.amazonaws.com"
+        }
+      },
+      "expectedMatched": false,
+      "expectedError": true
+    }
+  ]
+}
