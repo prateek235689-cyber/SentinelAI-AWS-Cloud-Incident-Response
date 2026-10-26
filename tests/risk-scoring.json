@@ -1,0 +1,51 @@
+{
+  "version": "1.0",
+  "scoringType": "deterministic",
+  "scoreRange": {
+    "minimum": 0,
+    "maximum": 100
+  },
+  "severityThresholds": {
+    "LOW": {
+      "minimum": 0,
+      "maximum": 29
+    },
+    "MEDIUM": {
+      "minimum": 30,
+      "maximum": 59
+    },
+    "HIGH": {
+      "minimum": 60,
+      "maximum": 84
+    },
+    "CRITICAL": {
+      "minimum": 85,
+      "maximum": 100
+    }
+  },
+  "riskFactors": [
+    {
+      "factor": "iamPolicyModification",
+      "points": 40
+    },
+    {
+      "factor": "privilegedPolicyTarget",
+      "points": 25
+    },
+    {
+      "factor": "unusualActivityContext",
+      "points": 20
+    },
+    {
+      "factor": "failedOrMissingContextValidation",
+      "points": 15
+    }
+  ],
+  "maximumScore": 100,
+  "guardrails": [
+    "Risk scores support investigation and do not prove malicious intent.",
+    "Missing context must be marked unknown rather than assumed malicious.",
+    "AI-generated summaries must not change the deterministic score.",
+    "High-risk findings require human review before remediation."
+  ]
+}
