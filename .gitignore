@@ -1,0 +1,17 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials
+secrets.json
+
+# Local editor and operating-system files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Generated and temporary files
+*.log
+*.tmp
